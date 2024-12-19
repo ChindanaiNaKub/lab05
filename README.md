@@ -1,46 +1,24 @@
 # lab05
 
+
 ### 2
 #### 2.2
 ![ภาพ](https://github.com/user-attachments/assets/f4842ecf-9aad-4f67-aa15-884a2b351a3a)
 
 ##### 2.3
-cd .
+```bash
+cd .    # Stay in current directory
+cd ..   # Move up one directory level
+cd ~    # Go to home directory
+cd /    # Go to root directory
+```
 
-    คำสั่งนี้หมายถึง "อยู่ที่เดิม" หรือไม่เปลี่ยนไดเรกทอรี เพราะ . หมายถึงไดเรกทอรีปัจจุบัน
-    ตัวอย่างในภาพ: ใช้คำสั่งนี้แล้วพิมพ์ pwd ก็ยังอยู่ที่ /home/prab เหมือนเดิม
-
-cd ..
-
-    คำสั่งนี้ใช้สำหรับ "ถอยกลับไป 1 ระดับ" ในโครงสร้างไดเรกทอรี หมายถึงย้อนกลับไปยังโฟลเดอร์แม่ (Parent Directory)
-    ตัวอย่างในภาพ: ใช้คำสั่งนี้จาก /home/prab แล้วจะถอยไปที่ /home
-
-cd ~
-
-    คำสั่งนี้ใช้สำหรับกลับไปที่ "ไดเรกทอรีบ้าน" หรือโฟลเดอร์หลักของผู้ใช้ (~ หมายถึง Home Directory)
-    ตัวอย่างในภาพ: ใช้คำสั่งนี้แล้วกลับไปที่ /home/prab
-
-cd /
-
-    คำสั่งนี้ใช้เพื่อไปยัง "ไดเรกทอรีราก" (/) ซึ่งเป็นโฟลเดอร์ระดับบนสุดของระบบไฟล์
-    ตัวอย่างในภาพ: ใช้คำสั่งนี้แล้วพิมพ์ pwd จะแสดง /
-
-cd $
-
-    คำสั่งนี้ผิดพลาด เนื่องจาก $ เป็นสัญลักษณ์สำหรับเรียกใช้งาน "ตัวแปรสภาพแวดล้อม" (Environment Variable) เช่น $HOME
-    ในภาพ: $ ไม่มีตัวแปรที่เกี่ยวข้อง ทำให้ระบบแจ้งว่า No such file or directory
-
-สรุป 
-
-cd .: อยู่ในไดเรกทอรีเดิม
-
-cd ..: ถอยกลับไปยังไดเรกทอรีแม่
-
-cd ~: กลับไปยังไดเรกทอรีบ้านของผู้ใช้
-
-cd /: ไปยังไดเรกทอรีรากของระบบ
-
-cd $: ใช้ผิด เพราะ $ ต้องตามด้วยตัวแปรที่ถูกต้อง เช่น $HOME
+### Command Explanations
+- `cd .` - Remains in current directory (.)
+- `cd ..` - Moves to parent directory
+- `cd ~` - Returns to user's home directory
+- `cd /` - Navigates to root directory
+- `cd $` - Incorrect usage ($ requires environment variable)
 
 #### 2.4
 ![ภาพ](https://github.com/user-attachments/assets/078d19a8-def4-441b-971f-fd0ca9972602)
@@ -53,13 +31,15 @@ cd $: ใช้ผิด เพราะ $ ต้องตามด้วยต�
 #### 3.3
 ![ภาพ](https://github.com/user-attachments/assets/bab5354e-72ed-454f-ae0f-8c1e91131545)
 
-ls: Lists the contents of a directory in a simple format (files and directories only, without details).
+```bash
+ls      # Basic listing
+ls -alt # Detailed listing with all files, sorted by time
+```
 
-ls -alt:
-
-    -a: Shows all files, including hidden files (those starting with a .).
-    -l: Provides a detailed list (permissions, ownership, size, etc.).
-    -t: Sorts the list by modification time, showing the most recently modified files first.
+The `-alt` flags provide:
+- `-a`: Show hidden files
+- `-l`: Long format with details
+- `-t`: Sort by modification time
 
 #### 3.4
 ![ภาพ](https://github.com/user-attachments/assets/585e89e4-ac76-4193-9e69-213439bcc0ee)
@@ -86,20 +66,17 @@ wc name.csv: Stands for "word count". It outputs:
     Number of lines,
     Number of words,
     Number of characters in the file.
+
 #### 4.4
 ![ภาพ](https://github.com/user-attachments/assets/c8382bee-18ec-4d6e-992d-2955b2752323)
 
 #### 4.5 
 
-cat: Displays the full content immediately.
-
-more: Paginates the content for better readability in large files.
-
-head: Displays the start of the file (first 10 lines).
-
-tail: Displays the end of the file (last 10 lines).
-
-wc: Counts lines, words, and characters; use -l to count only lines.    
+- `cat`: Display full content
+- `more`: Paginated view
+- `head`: First 10 lines
+- `tail`: Last 10 lines
+- `wc`: Count lines, words, and characters
 
 ### 5
 #### 5.2
@@ -121,14 +98,21 @@ wc: Counts lines, words, and characters; use -l to count only lines.
 #### 6.3
 ![ภาพ](https://github.com/user-attachments/assets/cf7ae69d-36b4-45a1-8f5c-1cb22a3934b5)
 
-Purpose: Sends ICMP packets to test the connectivity and measure response time between your system and the destination.
+- `ping`: Test network connectivity
+  - Sends ICMP packets
+  - Measures response time
 
 ![ภาพ](https://github.com/user-attachments/assets/369a65a4-685d-452c-8277-c234c241a9a4)
 
-Purpose: Tracks the route packets take to reach a destination, showing all intermediate hops and delays.
+- `traceroute`: Track packet routes
+  - Shows path to destination
+  - Displays intermediate hops
 
 #### 6.4 
-netstat -n
+- `netstat -n`: View active connections
+  - Shows local and remote addresses
+  - Displays connection states
+
 ![ภาพ](https://github.com/user-attachments/assets/f0ed4000-9a04-49db-bb70-6088f91feb0f)
 
 Displays active network connections with numerical addresses and port numbers.
@@ -142,17 +126,17 @@ The table includes:
 #### 7.1
 ![ภาพ](https://github.com/user-attachments/assets/69b70348-fde3-4417-99c4-9cea208601ff)
 
-top displays real-time information about system processes, CPU usage, memory usage, and system uptime.
-It helps monitor system performance, identify resource-hungry processes, and manage running processes.
+- Real-time system process monitor
+- Shows:
+  - CPU usage
+  - Memory usage
+  - System uptime
 
 #### 7.2 
 ![ภาพ](https://github.com/user-attachments/assets/3a4c42f5-54a6-4df1-b442-f19e09558f44)
 
-Differences:
-
-    User Interface: htop provides a more user-friendly interface with color-coded output and easier navigation.
-    Process Management: In htop, you can use arrow keys to select a process and terminate it directly using F9. top requires manual input of process IDs (PIDs).
-    Customizability: htop allows better customization of what is displayed and how.
-    Scrolling: htop lets you scroll through processes and see detailed information, while top does not.
-
-
+Enhanced system monitor with:
+- Color-coded interface
+- Easy process management
+- Customizable display
+- Scrollable process list
